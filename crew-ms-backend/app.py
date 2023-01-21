@@ -3,8 +3,8 @@ from flask import Flask
 from flask_cors import CORS
 
 # USEC Imports
-from routes.users.__intit__ import users
-from routes.incident.__intit__ import incidents
+from routes.users.__init__ import users
+from routes.incident.__init__ import incidents
 
 app = Flask(__name__)
 
