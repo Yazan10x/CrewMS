@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import {FaDiscord, FaGithub} from "react-icons/all";
 import * as React from "react";
-import GridBlurredBackdrop from "../Home/Purpose";
+import {Purpose} from "../Home/Purpose";
 
 export const HealthReport = () => {
   return (
@@ -63,7 +63,7 @@ export const HealthReport = () => {
               }}>
               Daily Check-Up
             </Button>
-            {GridBlurredBackdrop()}
+            {Purpose()}
           </Stack>
         </Stack>
       </Container>
