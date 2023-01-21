@@ -1,10 +1,11 @@
 # Python Imports
 import flask
-from flask import Blueprint, Response, jsonify
+from flask import Blueprint, Response
 from bson import ObjectId
 
 # USEC Imports
-from routes.health import get, post
+from routes.health import get
+from routes.health import post
 
 health = Blueprint('health', __name__)
 

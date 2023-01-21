@@ -3,9 +3,9 @@ from flask import Flask
 from flask_cors import CORS
 
 # Imports
-from routes.health.__intit__ import health
-from routes.users.__init__ import users
+from routes.users import users
 from routes.incident.__init__ import incidents
+from routes.health import health
 
 app = Flask(__name__)
 
