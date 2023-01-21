@@ -20,4 +20,4 @@ class CREW_MS_DB:
 
     users_coll: Collection = _crew_ms_db.get_collection("users")
     health_coll: Collection = _crew_ms_db.get_collection("health")
-    incident: Collection = _crew_ms_db.get_collection("incident")
+    incident_coll: Collection = _crew_ms_db.get_collection("incident")
