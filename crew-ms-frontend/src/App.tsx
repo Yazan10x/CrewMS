@@ -18,6 +18,7 @@ import {
 import { ColorModeSwitcher } from "./Components/Dashboard/ColorModeSwitcher"
 import {Dashboard} from "./Components/Dashboard/Dashboard";
 import {Home} from "./Components/Home/Home";
+import {HealthCheck} from "./Components/HealthReport/HealthCheck";
 import {IncidentReport} from "./Components/IncidentReport/IncidentReport";
 import {NotFound} from "./Components/Other/NotFound";
 import {MembersTable} from "./Components/Crew/MembersTable";
@@ -34,6 +35,7 @@ export const App = () => (
 
                 <Route path="/" element={<Dashboard></Dashboard>}>
                     <Route path="/home" element={<Home></Home>}/>
+                    <Route path="/healthreport" element={<HealthCheck></HealthCheck>}/>
                     <Route path="/incident_report" element={<IncidentReport></IncidentReport>}/>
                     {/*<Route path="/staff" element={<StaffPage></StaffPage>}/>*/}
                     <Route path="/crew" element={<MembersTable></MembersTable>}/>
