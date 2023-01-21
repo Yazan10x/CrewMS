@@ -1,15 +1,16 @@
 import * as React from "react"
 import {
     Box,
-    VStack, Grid, GridItem, SimpleGrid, Text, Stack, Skeleton, Heading, Spacer, Center, Badge, HStack
+    VStack, Grid, GridItem, SimpleGrid, Text, Stack, Skeleton, Heading, Spacer, Center, Badge, HStack, WrapItem, Avatar
 } from "@chakra-ui/react"
 
 import {UsersAPI} from "../../APIs/UsersAPI"
 import {Component, memo, useEffect, useState} from "react";
-import {User} from "../../Models/User";
+import {Profile, User} from "../../Models/User";
 import {TableFunction} from "../Table/Table";
 
 interface TableData {
+    profile: Profile
     full_name: string
     username: string
     email: string
@@ -26,6 +27,7 @@ export const MembersTable = React.memo(() =>  {
                 let data = res!
                 let entry = data.map((user) => {
                     return {
+                        profile: user.profile,
                         full_name: user.profile.first_name + " " + user.profile.last_name,
                         username: user.username,
                         email: user.profile.email,
@@ -45,6 +47,19 @@ export const MembersTable = React.memo(() =>  {
     const get_columns = () => {
 
         return [
+            {
+                Header: "",
+                accessor: "profile",
+                Cell: function StatusCell(profile: Profile) {
+
+            return (
+                <WrapItem>
+                    <Avatar name={profile.first_name} src={profile.profile_picture} />
+                </WrapItem>
+            )
+
+            },
+            },
             {
                 Header: "Name",
                 accessor: "full_name",
