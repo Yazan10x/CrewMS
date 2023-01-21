@@ -18,6 +18,7 @@ import {
 import { ColorModeSwitcher } from "./Components/Dashboard/ColorModeSwitcher"
 import {Dashboard} from "./Components/Dashboard/Dashboard";
 import {Home} from "./Components/Home/Home";
+import {NotFound} from "./Components/Other/NotFound";
 
 function NavigateFunctionComponent() {
     return null;
@@ -40,7 +41,7 @@ export const App = () => (
                     {/*<Route path="/privacy" element={<PrivacyPolicy></PrivacyPolicy>}/>*/}
                 </Route>
 
-                {/*<Route path="*" element={<NotFound/>}/>*/}
+                <Route path="*" element={<NotFound/>}/>
 
             </Routes>
         </BrowserRouter>
