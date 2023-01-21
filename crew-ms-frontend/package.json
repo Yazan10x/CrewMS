@@ -18,6 +18,7 @@
     "bson": "^4.7.2",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^3.11.0",
     "react-router-dom": "^6.7.0",
