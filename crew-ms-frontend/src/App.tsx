@@ -19,6 +19,7 @@ import { ColorModeSwitcher } from "./Components/Dashboard/ColorModeSwitcher"
 import {Dashboard} from "./Components/Dashboard/Dashboard";
 import {Home} from "./Components/Home/Home";
 import {NotFound} from "./Components/Other/NotFound";
+import {MembersTable} from "./Components/Crew/MembersTable";
 
 function NavigateFunctionComponent() {
     return null;
@@ -33,7 +34,7 @@ export const App = () => (
                 <Route path="/" element={<Dashboard></Dashboard>}>
                     <Route path="/home" element={<Home></Home>}/>
                     {/*<Route path="/staff" element={<StaffPage></StaffPage>}/>*/}
-                    {/*<Route path="/members" element={<MembersTable></MembersTable>}/>*/}
+                    <Route path="/crew" element={<MembersTable></MembersTable>}/>
                     {/*<Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
                     {/*    <Route path="/members/:user_id" element={<MemberDashboard></MemberDashboard>}/>*/}
 
