@@ -15,7 +15,8 @@ import {
   Route,
   useNavigate
 } from "react-router-dom";
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
+import { ColorModeSwitcher } from "./Components/Dashboard/ColorModeSwitcher"
+import {Dashboard} from "./Components/Dashboard/Dashboard";
 
 function NavigateFunctionComponent() {
     return null;
@@ -27,18 +28,10 @@ export const App = () => (
            {<NavigateFunctionComponent />}
             <Routes>
 
-                {/*<Route path="/" element={<Dashboard/>}>*/}
-                {/*    <Route path="/home" element={<Home></Home>}/>*/}
-                {/*    <Route path="/staff" element={<StaffPage></StaffPage>}/>*/}
-                {/*    <Route path="/members" element={<MembersTable></MembersTable>}/>*/}
-                {/*    <Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
-                {/*        <Route path="/members/:user_id" element={<MemberDashboard></MemberDashboard>}/>*/}
+                <Route path="/" element={<Dashboard></Dashboard>}>
+                </Route>
 
-                {/*    <Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
-                {/*    <Route path="/privacy" element={<PrivacyPolicy></PrivacyPolicy>}/>*/}
-                {/*</Route>*/}
 
-                {/*<Route path="*" element={<NotFound/>}/>*/}
 
             </Routes>
         </BrowserRouter>
