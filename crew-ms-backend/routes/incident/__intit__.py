@@ -15,7 +15,7 @@ def get_incident(incident: str) -> Response:
 
 
 @incidents.route("/get_incidents_by", methods=['POST'])
-def get_users() -> Response:
+def get_incidents() -> Response:
     return get.get_incidents(flask.request.get_json(silent=True))
 
 
