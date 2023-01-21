@@ -18,6 +18,7 @@ import {
 import { ColorModeSwitcher } from "./Components/Dashboard/ColorModeSwitcher"
 import {Dashboard} from "./Components/Dashboard/Dashboard";
 import {Home} from "./Components/Home/Home";
+import {HealthReport} from "./Components/HealthReport/HealthReport";
 import {HealthCheck} from "./Components/HealthReport/HealthCheck";
 import {IncidentReport} from "./Components/IncidentReport/IncidentReport";
 import {NotFound} from "./Components/Other/NotFound";

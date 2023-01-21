@@ -17,7 +17,7 @@ import {FaDiscord, FaGithub} from "react-icons/all";
 import * as React from "react";
 import GridBlurredBackdrop from "../Home/Purpose";
 
-export const HealthCheck = () => {
+export const HealthReport = () => {
   return (
     <>
       <header>
