@@ -51,14 +51,12 @@ export const MembersTable = React.memo(() =>  {
                 Header: "",
                 accessor: "profile",
                 Cell: function StatusCell(profile: Profile) {
-
-            return (
-                <WrapItem>
-                    <Avatar name={profile.first_name} src={profile.profile_picture} />
-                </WrapItem>
-            )
-
-            },
+                    return (
+                        <WrapItem>
+                            <Avatar name={profile.first_name} src={profile.profile_picture} />
+                        </WrapItem>
+                    )
+                },
             },
             {
                 Header: "Name",
