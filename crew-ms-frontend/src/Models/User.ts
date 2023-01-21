@@ -10,6 +10,14 @@ export interface Profile {
     profile_picture: string
 }
 
+export interface Profile {
+    gender: string
+    race: string
+    age: string
+    sec: string
+    blood_type: string
+    health_conditions: string
+}
 
 export interface User {
     _id: ObjectID
