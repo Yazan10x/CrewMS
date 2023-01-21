@@ -6,7 +6,7 @@ from bson import ObjectId
 # USEC Imports
 from routes.incident import get, post
 
-incidents = Blueprint('users', __name__)
+incidents = Blueprint('incidents', __name__)
 
 
 @incidents.route("/get_incident/<incident_id>", methods=['GET'])
