@@ -1,12 +1,8 @@
-
-"""
-Access USEC_DB
-"""
 # Python Imports
 from pymongo import MongoClient
 from pymongo.collection import Collection
 
-# USEC Imports
+# Imports
 from data_manager._crew_ms_secrets import get_db
 
 
@@ -17,7 +13,7 @@ _crew_ms_db = _cluster[USEC_DB_NAME]
 
 
 class CREW_MS_DB:
-
+    health = None
     users_coll: Collection = _crew_ms_db.get_collection("users")
     health_coll: Collection = _crew_ms_db.get_collection("health")
     incident_coll: Collection = _crew_ms_db.get_collection("incident")

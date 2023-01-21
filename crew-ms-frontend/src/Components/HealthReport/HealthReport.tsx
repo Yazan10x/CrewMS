@@ -25,7 +25,7 @@ export const HealthReport = () => {
           href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
           rel="stylesheet"
         />
-        <title>Home</title>
+        <title>Health Report</title>
       </header>
 
       <Container maxW={'3xl'}>
@@ -61,7 +61,7 @@ export const HealthReport = () => {
               _hover={{
                 bg: 'green.500',
               }}>
-              Sign In
+              Daily Check-Up
             </Button>
             {GridBlurredBackdrop()}
           </Stack>
