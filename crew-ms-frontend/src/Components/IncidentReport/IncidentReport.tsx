@@ -16,6 +16,7 @@ import {
 import {FaDiscord, FaGithub} from "react-icons/all";
 import GridBlurredBackdrop from "../Home/Purpose"
 import * as React from "react";
+import { IncidentTable } from './IncidentTable';
 
 export const IncidentReport = () => {
   return (
@@ -27,7 +28,7 @@ export const IncidentReport = () => {
         />
         <title>Incident Report</title>
       </header>
-
+      
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
@@ -43,6 +44,7 @@ export const IncidentReport = () => {
               Report
             </Text>
           </Heading>
+          <IncidentTable></IncidentTable>
           <Text color={'gray.500'}>
             Crew Page
           </Text>
