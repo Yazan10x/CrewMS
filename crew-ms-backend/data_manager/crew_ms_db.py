@@ -13,7 +13,6 @@ _crew_ms_db = _cluster[USEC_DB_NAME]
 
 
 class CREW_MS_DB:
-    health = None
     users_coll: Collection = _crew_ms_db.get_collection("users")
     health_coll: Collection = _crew_ms_db.get_collection("health")
     incident_coll: Collection = _crew_ms_db.get_collection("incident")

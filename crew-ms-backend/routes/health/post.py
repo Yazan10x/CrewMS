@@ -12,12 +12,11 @@ from data_manager.crew_ms_db import CREW_MS_DB
 
 
 def get_health_records_by(query: dict) -> Response:
-    all_docs = CREW_MS_DB.health.find(query)
+    all_docs = CREW_MS_DB.health_coll.find(query)
     all_log: list[dict] = []
     for doc in all_docs:
         log = Health.from_json(doc).to_json()
         log['_id'] = str(log['_id'])
-        log['user_id'] = str(log['user_id'])
         all_log.append(log)
     return jsonify(all_log)
 

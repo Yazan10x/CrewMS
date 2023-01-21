@@ -11,8 +11,7 @@ from data_manager.crew_ms_db import CREW_MS_DB
 
 
 def get_health(_id: ObjectId) -> Optional[Response]:
-    hel = CREW_MS_DB.health.find.one({'_id': _id})
-    hel = Health.from_json(hel).to_json()
-    hel['_id'] = str(hel['_id'])
-    hel['user_id'] = str(hel['user_id'])
-    return jsonify(hel)
+    health = CREW_MS_DB.health_coll.find_one({'_id': _id})
+    health = Health.from_json(health).to_json()
+    health['_id'] = str(health['_id'])
+    return jsonify(health)
