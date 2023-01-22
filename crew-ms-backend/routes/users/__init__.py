@@ -3,7 +3,7 @@ import flask
 from flask import Blueprint, Response, jsonify
 from bson import ObjectId
 
-# USEC Imports
+# Imports
 from routes.users import get, post
 
 users = Blueprint('users', __name__)
@@ -17,11 +17,6 @@ def get_user(user_id: str) -> Response:
 @users.route("/get_users", methods=['GET'])
 def get_users() -> Response:
     return get.get_users()
-
-
-@users.route("/get_simple_users", methods=['GET'])
-def get_simple_users() -> Response:
-    return get.get_simple_users()
 
 
 @users.route("/create_user", methods=['POST'])

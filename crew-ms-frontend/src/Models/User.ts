@@ -10,10 +10,19 @@ export interface Profile {
     profile_picture: string
 }
 
+export interface Demographics {
+    gender: string
+    race: string
+    age: string
+    sex: string
+    blood_type: string
+    health_conditions: string
+}
 
 export interface User {
     _id: ObjectID
     username: string
     has_admin: boolean
     profile: Profile
+    demographics: Demographics
 }

@@ -58,7 +58,7 @@ export const NavBar = () => {
             verticalAlign={'middle'}>
           <HStack>
             <Image
-                src="/logo192.png"
+                src="/logo_CS.png"
                 width={"40px"}
                 alt={"USEC LOGO"}>
             </Image>
