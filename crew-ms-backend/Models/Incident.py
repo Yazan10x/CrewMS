@@ -8,7 +8,6 @@ from datetime import datetime
 from typing import Optional
 from bson import ObjectId
 
-# USEC Imports
 from data_manager.crew_ms_db import CREW_MS_DB
 
 
