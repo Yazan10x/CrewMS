@@ -34,7 +34,7 @@ export const CreateIncident = React.memo(({isOpen, onClose, cancelRef}: CreateIn
 
     const [incident, set_incident] = React.useState<Incident>(
         {
-            _id: ObjectId.createFromTime(Date.now()),
+            _id: new ObjectId(),
             user_id: "",
             incident_type: "",
             associated_users: [],
@@ -75,9 +75,10 @@ export const CreateIncident = React.memo(({isOpen, onClose, cancelRef}: CreateIn
     }
 
     const cancel = () => {
+        onClose()
         set_incident(
             {
-                _id: ObjectId.createFromTime(Date.now()),
+                _id: new ObjectId(),
                 user_id: "",
                 incident_type: "",
                 associated_users: [],
@@ -86,15 +87,13 @@ export const CreateIncident = React.memo(({isOpen, onClose, cancelRef}: CreateIn
                 description: ""
             }
             )
-        onClose()
     }
 
     return (
         <AlertDialog
         isOpen={isOpen}
         leastDestructiveRef={cancelRef}
-        onClose={onClose}
-      >
+        onClose={onClose}>
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize='lg' fontWeight='bold'>
@@ -116,10 +115,10 @@ export const CreateIncident = React.memo(({isOpen, onClose, cancelRef}: CreateIn
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={cancel} isDisabled={loading}>
+              <Button ref={cancelRef} onClick={cancel}>
                 Cancel
               </Button>
-              <Button colorScheme='green' onClick={create} ml={3} isDisabled={loading}>
+              <Button colorScheme='green' onClick={create} ml={3}>
                 Create
               </Button>
             </AlertDialogFooter>
