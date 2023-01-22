@@ -14,7 +14,6 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 import {FaDiscord, FaGithub} from "react-icons/all";
-import GridBlurredBackdrop from "../Home/Purpose"
 import * as React from "react";
 import { IncidentTable } from './IncidentTable';
 
@@ -28,7 +27,7 @@ export const IncidentReport = () => {
         />
         <title>Incident Report</title>
       </header>
-      
+
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
