@@ -118,7 +118,7 @@ export const CreateIncident = React.memo(({isOpen, onClose, cancelRef}: CreateIn
               <Button ref={cancelRef} onClick={cancel}>
                 Cancel
               </Button>
-              <Button colorScheme='green' onClick={create} ml={3}>
+              <Button colorScheme='cyan' onClick={create} ml={3}>
                 Create
               </Button>
             </AlertDialogFooter>

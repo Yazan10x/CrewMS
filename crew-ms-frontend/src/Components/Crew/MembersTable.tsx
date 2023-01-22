@@ -81,9 +81,19 @@ export const MembersTable = React.memo(() =>  {
         <Box overflowX="auto" overflowY="hidden">
             <Center>
                 <VStack>
-                    <Heading size="xl" mb="6">
-                        Members Page
-                    </Heading>
+                     <Heading
+                        fontWeight={600}
+                        fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+                        lineHeight={"100%"}
+                      >
+                        Members
+
+                         </Heading>
+                    <Heading fontWeight={600}
+                        fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+                                 color={"cyan.400"}>
+                          Page!
+                        </Heading>
                     <Badge colorScheme={'red'}>
                         New | Sign Up to be added
                     </Badge>
