@@ -24,7 +24,7 @@ class Health:
     hygiene: list[str]
     workspace: dict[str, int]
     diet: float
-    rest: int
+    rest: float
     mental_health: dict[str, int]
 
     def __init__(self,
@@ -39,7 +39,7 @@ class Health:
                  hygiene: list[str],
                  workspace: dict[str, int],
                  diet: float,
-                 rest: int,
+                 rest: float,
                  mental_health: dict[str, int],
                  ) -> None:
         self.user_id = user_id
