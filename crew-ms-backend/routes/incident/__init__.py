@@ -4,7 +4,7 @@ from flask import Blueprint, Response, jsonify
 from bson import ObjectId
 
 # USEC Imports
-from routes.incident import get, post
+from routes.incident import get, post, delete
 
 incidents = Blueprint('incidents', __name__)
 
@@ -12,6 +12,11 @@ incidents = Blueprint('incidents', __name__)
 @incidents.route("/get_incident/<incident_id>", methods=['GET'])
 def get_incident(incident: str) -> Response:
     return get.get_incident(ObjectId(incident))
+
+
+@incidents.route("/delete_incident/<incident_id>", methods=['DELETE'])
+def get_incident(incident: str) -> Response:
+    return delete.get_incident(ObjectId(incident))
 
 
 @incidents.route("/get_incidents_by", methods=['POST'])

@@ -4,8 +4,7 @@ from flask import Blueprint, Response
 from bson import ObjectId
 
 # USEC Imports
-from routes.health import get
-from routes.health import post
+from routes.health import get, post, delete
 
 health = Blueprint('health', __name__)
 
@@ -13,6 +12,11 @@ health = Blueprint('health', __name__)
 @health.route("/get_health/<health_id>", methods=['GET'])
 def get_health(user_id: str) -> Response:
     return get.get_health(ObjectId(user_id))
+
+
+@health.route("/delete_health/<health_id>", methods=['Delete'])
+def get_health(user_id: str) -> Response:
+    return delete.delete_health(ObjectId(user_id))
 
 
 @health.route("/get_health_records_by", methods=['POST'])
