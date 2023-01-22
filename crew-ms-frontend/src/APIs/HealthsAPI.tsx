@@ -4,7 +4,7 @@ import { Health } from "../Models/Health";
 
 export namespace HealthsAPI {
 
-    let route_name = "/health_report"
+    let route_name = "/health"
 
     export const get_health = async (health_id: ObjectID) => {
         return FLASK_HTTPS.get(route_name + "/get_health/" + health_id.toString())

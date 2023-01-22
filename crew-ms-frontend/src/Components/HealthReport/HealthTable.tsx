@@ -3,7 +3,7 @@ import {
     Box,
     VStack, Grid, GridItem, SimpleGrid, Text, Stack, Skeleton, Heading, Spacer, Center, Badge, HStack, Code
 } from "@chakra-ui/react"
-import {ObjectID} from "bson";
+import {ObjectId, ObjectID} from "bson";
 import {IncidentsAPI} from "../../APIs/IncidentsAPI"
 import {Component, memo, useEffect, useState} from "react";
 import {Incident} from "../../Models/Incident";
@@ -11,6 +11,8 @@ import {TableFunction} from "../Table/Table";
 import {HealthsAPI} from "../../APIs/HealthsAPI";
 import {Health} from "../../Models/Health";
 import {useParams} from "react-router-dom";
+import {UsersAPI} from "../../APIs/UsersAPI";
+import {User} from "../../Models/User";
 
 interface TableData {
     _id: ObjectID
@@ -21,10 +23,17 @@ interface TableData {
 export const HealthTable = React.memo(() =>  {
     let {user_id} = useParams();
     const [incidents, set_incidents] = useState<Array<TableData> | undefined>();
+    const [user, setUser] = useState<User>()
+
+    const get_user = () => {
+        UsersAPI.get_user(new ObjectId(user_id!)).then((res) => {
+            setUser(res!)
+        })
+    }
 
     const display_records = () => {
         let map = new Map()
-        map.set("user_id", user_id!)
+        map.set("user_id", new ObjectID(user_id!))
         HealthsAPI.get_records_by(map)
             .then((res) => {
                 let data = res!
@@ -41,6 +50,7 @@ export const HealthTable = React.memo(() =>  {
     }
 
     useEffect(() => {
+        get_user()
         display_records()
     }, []);
 
@@ -98,11 +108,8 @@ export const HealthTable = React.memo(() =>  {
             <Center>
                 <VStack>
                     <Heading size="xl" mb="6">
-                        Members Page
+                        {user?.profile.first_name + " " + user?.profile.last_name} Page
                     </Heading>
-                    <Badge colorScheme={'red'}>
-                        New | Sign Up to be added
-                    </Badge>
                 </VStack>
 
             </Center>

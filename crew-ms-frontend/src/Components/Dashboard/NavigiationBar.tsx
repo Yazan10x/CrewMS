@@ -246,7 +246,7 @@ const NAV_ITEMS: Array<NavItem> = [
 const DOCTOR_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Home',
-    route: 'Home'
+    route: 'home'
   },
   {
     label: 'Crew',

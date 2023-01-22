@@ -15,7 +15,7 @@ import {
     Stat,
     StatLabel,
     StatNumber,
-    StatHelpText,
+    StatHelpText, Center, Spacer,
 } from '@chakra-ui/react';
 import * as React from "react";
 import {PieChart} from "./PieChart";
@@ -68,39 +68,57 @@ export const Purpose = () => {
           <Card
               variant = 'elevated'
               minW={"400px"}
+              minH={"200px"}
+              align={"middle"}
               >
+              <Spacer></Spacer>
               <Stat>
                   <StatLabel fontSize={'3xl'}>Number of Members</StatLabel>
                   <StatNumber>{count}</StatNumber>
                   <StatHelpText>Present time</StatHelpText>
               </Stat>
+              <Spacer></Spacer>
           </Card>
           <Card
               variant = 'elevated'
+              minW={"400px"}
+              minH={"200px"}
+              align={"middle"}
               >
+              <Spacer></Spacer>
               <Stat>
                   <StatLabel fontSize={'3xl'}>Type of Exploration</StatLabel>
                   <StatNumber>Space Exploration</StatNumber>
                   <StatHelpText>Journey beyond the milky way!</StatHelpText>
               </Stat>
+              <Spacer></Spacer>
           </Card>
           <Card
               variant = 'elevated'
+              minW={"400px"}
+              minH={"200px"}
               >
+              <Spacer></Spacer>
               <Stat>
-                  <StatLabel fontSize={'3xl'}>Mode of Transportation</StatLabel>
-                  <StatNumber>Space Shuttle</StatNumber>
-                  <StatHelpText>A NASA Project</StatHelpText>
+                      <StatLabel fontSize={'3xl'}>Mode of Transportation</StatLabel>
+                      <StatNumber>Space Shuttle</StatNumber>
+                      <StatHelpText>A NASA Project</StatHelpText>
               </Stat>
+              <Spacer></Spacer>
           </Card>
           <Card
               variant = 'elevated'
+              minW={"400px"}
+              minH={"200px"}
+              align={"middle"}
               >
+              <Spacer></Spacer>
               <Stat>
                   <StatLabel fontSize={'3xl'}>Travel Speed</StatLabel>
                   <StatNumber>28,000</StatNumber>
                   <StatHelpText>km/hr</StatHelpText>
               </Stat>
+              <Spacer></Spacer>
           </Card>
       </SimpleGrid>
     </Flex>

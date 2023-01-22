@@ -27,7 +27,7 @@ export const Dashboard: React.FC = (props) =>  {
         }
     },[])
 
-    if (location.pathname == "/doctor") {
+    if (location.pathname.includes("doctor")) {
         return (
         <>
             {<DocNavBar></DocNavBar>}

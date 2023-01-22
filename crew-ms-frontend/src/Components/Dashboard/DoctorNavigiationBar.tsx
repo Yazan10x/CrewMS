@@ -226,19 +226,15 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Home',
-    route: 'Home'
-  },
-  {
-    label: 'Crew',
-    route: 'crew'
+    label: 'Doctor Home',
+    route: 'home'
   },
   {
     label: 'Health Report',
-    route: 'doctor/health_report'
+    route: '/doctor/health_report'
   },
   {
-    label: 'Incident Report',
-    route: 'incident_report'
+    label: 'Patients List',
+    route: '/doctor/health_report/users'
   },
 ];

@@ -25,6 +25,7 @@ import {MembersTable} from "./Components/Crew/MembersTable";
 import {MemberDashboard} from "./Components/Crew/MemberDashboard";
 import {MembersHealthTable} from "./Components/HealthReport/MembersTable";
 import {HealthTable} from "./Components/HealthReport/HealthTable";
+import {NotFoundDoctor} from "./Components/Other/NotFoundDoctor";
 
 function NavigateFunctionComponent() {
     return null;
@@ -40,21 +41,19 @@ export const App = () => (
                     <Route path="/home" element={<Home></Home>}/>
                     <Route path="/incident_report" element={<IncidentReport></IncidentReport>}/>
                     <Route path="/health_report" element={<HealthReport></HealthReport>}/>
-                    {/*<Route path="/staff" element={<StaffPage></StaffPage>}/>*/}
                     <Route path="/crew" element={<MembersTable></MembersTable>}/>
                         <Route path="/crew/:user_id" element={<MemberDashboard></MemberDashboard>}/>
-                    <Route path="doctor/health_report" element={<HealthReport></HealthReport>}></Route>
-                    <Route path="doctor/health_report/users" element={<MembersHealthTable></MembersHealthTable>}></Route>
-                    <Route path="doctor/health_report/users/:user_id" element={<HealthTable></HealthTable>}></Route>
-                    {/*<Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
-                    {/*    <Route path="/members/:user_id" element={<MemberDashboard></MemberDashboard>}/>*/}
-
-                    {/*<Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
-                    {/*<Route path="/privacy" element={<PrivacyPolicy></PrivacyPolicy>}/>*/}
                 </Route>
 
+                <Route path="/doctor" element={<Dashboard></Dashboard>}>
+                    <Route path="/doctor/home" element={<Home></Home>}/>
+                    <Route path="/doctor/health_report" element={<HealthReport></HealthReport>}></Route>
+                    <Route path="/doctor/health_report/users" element={<MembersHealthTable></MembersHealthTable>}></Route>
+                        <Route path="/doctor/health_report/users/:user_id" element={<HealthTable></HealthTable>}></Route>
+                </Route>
 
                 <Route path="*" element={<NotFound/>}/>
+                <Route path="/doctor/*" element={<NotFoundDoctor/>}/>
 
             </Routes>
         </BrowserRouter>
