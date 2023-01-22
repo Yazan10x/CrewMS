@@ -20,14 +20,15 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  FormControl, FormLabel, Input, useDisclosure,
+  FormControl,
+  FormLabel,
+  Input,
+  useDisclosure,
 } from "@chakra-ui/react";
 // import { CUIAutoComplete } from 'chakra-ui-autocomplete'
 import { FaDiscord, FaGithub } from "react-icons/all";
 import * as React from "react";
-import {HealthModalPopUp} from "./HealthModalPopUp";
-
-
+import { HealthModalPopUp } from "./HealthModalPopUp";
 
 export const HealthReport = () => {
   // Used for the modal popup
@@ -36,13 +37,13 @@ export const HealthReport = () => {
   const finalRef = React.useRef(null);
 
   // used for size of modal
-  const [size, setSize] = React.useState('xl')
+  const [size, setSize] = React.useState("xl");
 
   // used for when button is clicked to open modal popup and set size of modal popup to full
   const handleSizeClick = (newSize: React.SetStateAction<string>) => {
-    setSize(newSize)
-    onOpen()
-  }
+    setSize(newSize);
+    onOpen();
+  };
 
   // @ts-ignore
   return (
@@ -70,7 +71,7 @@ export const HealthReport = () => {
             Complete Your
             <br />
             <Text as={"span"} color={"cyan.400"}>
-              Daily Check-In!
+              Weekly Check-In!
             </Text>
           </Heading>
           <Text
@@ -80,7 +81,7 @@ export const HealthReport = () => {
             lineHeight={"120%"}
             // px={{ base: 10, md: -90 }}
           >
-            Completing your daily health check is an important aspect of taking
+            Completing your weekly health check is an important aspect of taking
             care of yourself and maintaining your overall well-being. It is a
             simple yet effective way to reflect on your physical, mental and
             spiritual health. Through this daily reflection, you can identify
@@ -115,11 +116,12 @@ export const HealthReport = () => {
             </Button>
 
             <HealthModalPopUp
-                initialRef={initialRef}
-                finalRef={finalRef}
-                isOpen={isOpen}
-                onClose={onClose}
-                size='3xl'/>
+              initialRef={initialRef}
+              finalRef={finalRef}
+              isOpen={isOpen}
+              onClose={onClose}
+              size="3xl"
+            />
           </Stack>
         </Stack>
       </Container>
