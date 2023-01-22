@@ -39,14 +39,14 @@ export namespace IncidentsAPI {
             })
         }
         export const delete_incident = async (incident_id: ObjectID) => {
-            return FLASK_HTTPS.delete(route_name + "/delete_incident/" + incident_id.toString())
+            return FLASK_HTTPS.get(route_name + "/delete_incident/" + incident_id.toString())
                 .then((res) => {
                     return res.data as Boolean
                 })
                 .catch((res) => {
                     console.log(res)
                 })
-        }     
+        }
 
 
 

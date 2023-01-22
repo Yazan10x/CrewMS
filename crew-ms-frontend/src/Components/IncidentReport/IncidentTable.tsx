@@ -19,7 +19,7 @@ import {
     Input,
     useDisclosure
 } from "@chakra-ui/react"
-import {ObjectID} from "bson";
+import {ObjectId, ObjectID} from "bson";
 import {IncidentsAPI} from "../../APIs/IncidentsAPI"
 import {Component, memo, useEffect, useState} from "react";
 import {Incident} from "../../Models/Incident";
@@ -28,6 +28,7 @@ import { DeleteIcon, ArrowForwardIcon, AddIcon } from "@chakra-ui/icons";
 import { BiExpand } from "react-icons/bi";
 import { CgExpand } from "react-icons/cg";
 import { CreateIncident, CreateIncidentDialog } from "./IncidentDialogue";
+import {UsersAPI} from "../../APIs/UsersAPI";
 
 
 interface TableData {
@@ -136,21 +137,6 @@ export const IncidentTable = React.memo(() =>  {
                             </>
                         )
                     }
-
-                    },
-            },
-            {
-                Header: "",
-                accessor: "_id",
-                Cell: function StatusCell(_id: ObjectID) {
-
-                    return (
-                        <IconButton
-                            colorScheme='teal'
-                            size='sm'
-                            aria-label='Expand'
-                            icon={<BiExpand/>}
-                        />)
 
                     },
             },

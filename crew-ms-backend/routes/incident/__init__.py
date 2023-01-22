@@ -14,7 +14,7 @@ def get_incident(incident: str) -> Response:
     return get.get_incident(ObjectId(incident))
 
 
-@incidents.route("/delete_incident/<incident_id>", methods=['DELETE'])
+@incidents.route("/delete_incident/<incident_id>", methods=['GET'])
 def delete_incident(incident: str) -> Response:
     return delete.get_incident(ObjectId(incident))
 

@@ -14,7 +14,7 @@ def get_health(user_id: str) -> Response:
     return get.get_health(ObjectId(user_id))
 
 
-@health.route("/delete_health/<health_id>", methods=['DELETE'])
+@health.route("/delete_health/<health_id>", methods=['GET'])
 def delete_health(user_id: str) -> Response:
     return delete.delete_health(ObjectId(user_id))
 
