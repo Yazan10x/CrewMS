@@ -16,7 +16,7 @@ export namespace HealthsAPI {
             })
     }
 
-    export const get_all_health = async (query: Map<string, string>) => {
+    export const get_records_by = async (query: Map<string, string>) => {
         return FLASK_HTTPS.post(route_name + "/get_health_records_by",
             query)
             .then((res) => {
