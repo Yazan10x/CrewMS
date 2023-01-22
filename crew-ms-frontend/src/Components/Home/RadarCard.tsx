@@ -39,6 +39,7 @@ export const RadarCard = () => {
                   overflow='hidden'
                   variant='outline'
                   align='center'
+                  minW={'1400px'}
             >
               <Stack>
                 <CardBody>
@@ -48,16 +49,19 @@ export const RadarCard = () => {
                                 The following graph shows the average statistics of all crew members, in the following categories
                             </Text>
                         <li>
-                            The number of hours of sleep crew members get on a daily basis
+                            The number of hours of sleep crew members get on a weekly basis
                         </li>
                         <li>
-                            The number of meals the crew members have on a daily basis
+                            The number of meals the crew members have on a weekly basis
                         </li>
                         <li>
                             The number of hours crew members engage in physical exersice
                         </li>
                         <li>
                             The average level of workplace organization by the crew members. (This is ranked from 1-5 where 1 is very unorganized and 5 is very organized).
+                        </li>
+                        <li>
+                            The average level of a healthy mindset of the crew members. (This is ranked from 1-5 where 1 is weak mental health and 5 is strong mental health).
                         </li>
                         <Center>
                             <Box width='800px'>

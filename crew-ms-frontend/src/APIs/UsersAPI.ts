@@ -25,4 +25,16 @@ export namespace UsersAPI {
             })
     }
 
+    export const create_user = async (user: User) => {
+        return FLASK_HTTPS.post(route_name + "/create_user",
+            {
+                user: user
+            })
+            .then((res) => {
+                return res.data as ObjectID
+            }).catch((res) => {
+                console.log(res)
+            })
+    }
+
 }

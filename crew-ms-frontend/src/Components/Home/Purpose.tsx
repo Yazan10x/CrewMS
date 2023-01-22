@@ -57,7 +57,7 @@ export const Purpose = () => {
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }}
             lineHeight={'110%'}>
-            Here is a quick update on our Crewsade! <br />
+            Here is a quick update on our Crewise! <br />
           </Heading>
         </Stack>
       <SimpleGrid
