@@ -7,17 +7,45 @@ import {
   Stack,
   Icon,
   useColorModeValue,
-  createIcon, Link,
-      Avatar,
+  createIcon,
+  Link,
+  Avatar,
   chakra,
   Flex,
   SimpleGrid,
-} from '@chakra-ui/react';
-import {FaDiscord, FaGithub} from "react-icons/all";
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  FormControl, FormLabel, Input, useDisclosure,
+} from "@chakra-ui/react";
+// import { CUIAutoComplete } from 'chakra-ui-autocomplete'
+import { FaDiscord, FaGithub } from "react-icons/all";
 import * as React from "react";
-import {Purpose} from "../Home/Purpose";
+import GridBlurredBackdrop from "../Home/Purpose";
+import {HealthModalPopUp} from "./HealthModalPopUp";
+
+
 
 export const HealthReport = () => {
+  // Used for the modal popup
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
+
+  // used for size of modal
+  const [size, setSize] = React.useState('xl')
+
+  // used for when button is clicked to open modal popup and set size of modal popup to full
+  const handleSizeClick = (newSize: React.SetStateAction<string>) => {
+    setSize(newSize)
+    onOpen()
+  }
+
+  // @ts-ignore
   return (
     <>
       <header>
@@ -28,45 +56,75 @@ export const HealthReport = () => {
         <title>Health Report</title>
       </header>
 
-      <Container maxW={'3xl'}>
+      <Container maxW={"3xl"}>
         <Stack
           as={Box}
-          textAlign={'center'}
+          textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 20, md: 36 }}
+        >
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            Complete Your Daily Check-Up! <br />
-            <Text as={'span'} color={'green.400'}>
-              Your Crew!
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            lineHeight={"110%"}
+          >
+            Complete Your
+            <br />
+            <Text as={"span"} color={"cyan.400"}>
+              Daily Check-In!
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            Health Page
+          <Text
+            color={"black.400"}
+            fontWeight={200}
+            fontSize={{ base: "1xl" }}
+            lineHeight={"120%"}
+            // px={{ base: 10, md: -90 }}
+          >
+            Completing your daily health check is an important aspect of taking
+            care of yourself and maintaining your overall well-being. It is a
+            simple yet effective way to reflect on your physical, mental and
+            spiritual health. Through this daily reflection, you can identify
+            any areas of concern and take the necessary steps to address them.
+            By taking the time to complete your daily health check, you can
+            ensure that you are staying on top of your health and making the
+            necessary changes to maintain a healthy and balanced lifestyle.
+            Regularly reflecting on your physical, mental, and spiritual health
+            can help you maintain a sense of balance, stability, and well-being
+            that is vital to your overall health. By completing your daily
+            health check, you can ensure that you are taking the right steps to
+            stay healthy and happy.
           </Text>
           <Stack
-            direction={'column'}
+            direction={"column"}
             spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-              isDisabled
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
+            align={"center"}
+            alignSelf={"center"}
+            position={"relative"}
+          >
+              <Button
+              colorScheme={"cyan"}
+              bg={"cyan.400"}
+              rounded={"full"}
               px={6}
               _hover={{
-                bg: 'green.500',
-              }}>
-              Daily Check-Up
+                bg: "cyan.500",
+              }}
+              onClick={() => handleSizeClick(size)}
+            >
+              Check-In
             </Button>
-            {Purpose()}
+
+            <HealthModalPopUp
+                initialRef={initialRef}
+                finalRef={finalRef}
+                isOpen={isOpen}
+                onClose={onClose}
+                size='3xl'/>
+
           </Stack>
         </Stack>
       </Container>
     </>
   );
-}
+};
