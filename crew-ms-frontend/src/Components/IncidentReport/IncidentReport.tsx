@@ -65,7 +65,6 @@ export const IncidentReport = () => {
               }}>
               Sign In
             </Button>
-            {GridBlurredBackdrop()}
           </Stack>
         </Stack>
       </Container>
