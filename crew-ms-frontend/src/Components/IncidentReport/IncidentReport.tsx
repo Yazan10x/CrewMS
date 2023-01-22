@@ -44,27 +44,6 @@ export const IncidentReport = () => {
             </Text>
           </Heading>
           <IncidentTable></IncidentTable>
-          <Text color={'gray.500'}>
-            Crew Page
-          </Text>
-          <Stack
-            direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-              isDisabled
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Sign In
-            </Button>
-          </Stack>
         </Stack>
       </Container>
     </>
