@@ -24,7 +24,7 @@ import { Link, Outlet } from 'react-router-dom';
 import {ColorModeSwitcher} from "./ColorModeSwitcher";
 import * as React from "react";
 
-export const NavBar = () => {
+export const DocNavBar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -225,25 +225,6 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Home',
-    route: 'Home'
-  },
-  {
-    label: 'Crew',
-    route: 'crew'
-  },
-  {
-    label: 'Health Report',
-    route: 'health_report'
-  },
-  {
-    label: 'Incident Report',
-    route: 'incident_report'
-  },
-];
-
-const DOCTOR_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Home',
     route: 'Home'

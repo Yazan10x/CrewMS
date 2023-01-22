@@ -12,6 +12,7 @@ import {
   } from 'react-icons/fi';
 import { useLocation, useNavigate } from "react-router-dom"
 import {NavBar} from "./NavigiationBar";
+import {DocNavBar} from "./DoctorNavigiationBar";
 
 
 export const Dashboard: React.FC = (props) =>  {
@@ -20,14 +21,23 @@ export const Dashboard: React.FC = (props) =>  {
     React.useEffect(() => {
         if (location.pathname == "/"){
             navigate("/home");
+
         } else if (location.pathname == "/doctor") {
             navigate("/doctor/home")
         }
     },[])
 
-    return (
+    if (location.pathname == "/doctor") {
+        return (
+        <>
+            {<DocNavBar></DocNavBar>}
+        </>
+    )
+    } else {
+        return (
         <>
             {<NavBar></NavBar>}
         </>
-    );
+    )
+    }
 }
