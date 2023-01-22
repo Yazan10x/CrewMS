@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # Services
 app.register_blueprint(users, url_prefix="/users")
-app.register_blueprint(health, url_prefix="/health_record")
+app.register_blueprint(health, url_prefix="/health")
 app.register_blueprint(incidents, url_prefix="/incidents")
 CORS(app)
 
