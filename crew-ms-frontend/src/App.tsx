@@ -23,6 +23,8 @@ import {IncidentReport} from "./Components/IncidentReport/IncidentReport";
 import {NotFound} from "./Components/Other/NotFound";
 import {MembersTable} from "./Components/Crew/MembersTable";
 import {MemberDashboard} from "./Components/Crew/MemberDashboard";
+import {MembersHealthTable} from "./Components/HealthReport/MembersTable";
+import {HealthTable} from "./Components/HealthReport/HealthTable";
 
 function NavigateFunctionComponent() {
     return null;
@@ -46,6 +48,12 @@ export const App = () => (
 
                     {/*<Route path="/events" element={<ComingSoon></ComingSoon>}/>*/}
                     {/*<Route path="/privacy" element={<PrivacyPolicy></PrivacyPolicy>}/>*/}
+                </Route>
+
+                <Route path='/doctor'>
+                    <Route path="/health_report" element={<HealthReport></HealthReport>}></Route>
+                    <Route path="/health_report/users" element={<MembersHealthTable></MembersHealthTable>}></Route>
+                    <Route path="/health_report/users/:user_id" element={<HealthTable></HealthTable>}></Route>
                 </Route>
 
                 <Route path="*" element={<NotFound/>}/>
