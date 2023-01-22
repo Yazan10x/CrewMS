@@ -27,4 +27,18 @@ export namespace IncidentsAPI {
             })
     }
 
+    export const create_incident = async (incident: Incident) => {
+        return FLASK_HTTPS.post(route_name + "/create_incident_log",
+            {
+                create_incident: incident
+            })
+            .then((res) => {
+                return res.data as Array<Incident>
+            }).catch((res) => {
+                console.log(res)
+            })
+        }
+
+
+
 }

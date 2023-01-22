@@ -14,31 +14,31 @@ from data_manager.crew_ms_db import CREW_MS_DB
 class Health:
     oid: ObjectId
     user_id: str
-    bpm: int
-    blood_pressure: int
-    blood_oxygen: int
-    temperature: int
+    bpm: float
+    blood_pressure: float
+    blood_oxygen: float
+    temperature: float
     timestamp: datetime
-    weight: int
+    weight: float
     symptoms: str
     hygiene: list[str]
     workspace: dict[str, int]
-    diet: dict[str, int]
+    diet: dict[str, float]
     rest: int
     mental_health: dict[str, int]
 
     def __init__(self,
                  user_id: str,
-                 bpm: int,
-                 blood_pressure: int,
-                 blood_oxygen: int,
-                 temperature: int,
+                 bpm: float,
+                 blood_pressure: float,
+                 blood_oxygen: float,
+                 temperature: float,
                  timestamp: datetime,
-                 weight: int,
+                 weight: float,
                  symptoms: str,
                  hygiene: list[str],
                  workspace: dict[str, int],
-                 diet: dict[str, int],
+                 diet: dict[str, float],
                  rest: int,
                  mental_health: dict[str, int],
                  ) -> None:
