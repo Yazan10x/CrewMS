@@ -129,7 +129,7 @@ export const IncidentTable = React.memo(() =>  {
                             size='sm'
                             aria-label='Search database'
                             icon={<DeleteIcon/>}
-                            onClick={() => delete_incident(incident._id)}
+                            onClick={delete_action}
                         />)
                     } else {
                         return (
