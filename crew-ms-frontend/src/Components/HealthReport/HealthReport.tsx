@@ -101,7 +101,7 @@ export const HealthReport = () => {
             alignSelf={"center"}
             position={"relative"}
           >
-              <Button
+            <Button
               colorScheme={"cyan"}
               bg={"cyan.400"}
               rounded={"full"}
@@ -120,7 +120,6 @@ export const HealthReport = () => {
                 isOpen={isOpen}
                 onClose={onClose}
                 size='3xl'/>
-
           </Stack>
         </Stack>
       </Container>
