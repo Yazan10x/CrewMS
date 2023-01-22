@@ -12,7 +12,7 @@ export interface Health {
     symptoms: string
     hygiene: string[]
     workspace: Record<string, number>
-    diet: Record<string, number>
+    diet: number
     rest: number
     mental_health: Record<string, number>
 }

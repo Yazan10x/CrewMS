@@ -23,7 +23,7 @@ class Health:
     symptoms: str
     hygiene: list[str]
     workspace: dict[str, int]
-    diet: dict[str, float]
+    diet: float
     rest: int
     mental_health: dict[str, int]
 
@@ -38,7 +38,7 @@ class Health:
                  symptoms: str,
                  hygiene: list[str],
                  workspace: dict[str, int],
-                 diet: dict[str, float],
+                 diet: float,
                  rest: int,
                  mental_health: dict[str, int],
                  ) -> None:
