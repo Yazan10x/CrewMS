@@ -152,7 +152,7 @@ export const HealthModalPopUp = ({
                   <HStack>
                       <FormControl>
                           <FormLabel>BPM(beats/min)</FormLabel>
-                            <NumberInput defaultValue={80} min={30} max={200}>
+                            <NumberInput defaultValue={80} min={0} max={200}>
                               <NumberInputField />
                               <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -163,7 +163,7 @@ export const HealthModalPopUp = ({
 
                         <FormControl>
                           <FormLabel>Blood Pressure(mmHg)</FormLabel>
-                            <NumberInput defaultValue={100} min={30} max={300}>
+                            <NumberInput defaultValue={100} min={0} max={300}>
                               <NumberInputField />
                               <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -171,12 +171,10 @@ export const HealthModalPopUp = ({
                               </NumberInputStepper>
                             </NumberInput>
                         </FormControl>
-                  </HStack>
-                    <Spacer></Spacer>
 
                 <FormControl mt={4}>
                   <FormLabel>Blood Oxygen(%)</FormLabel>
-                    <NumberInput defaultValue={97} min={50} max={100}>
+                    <NumberInput defaultValue={97} min={0} max={100}>
                       <NumberInputField />
                       <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -184,8 +182,11 @@ export const HealthModalPopUp = ({
                       </NumberInputStepper>
                     </NumberInput>
                 </FormControl>
+                </HStack>
 
-                <FormControl mt={4}>
+              <Spacer></Spacer>
+              <HStack>
+                <FormControl>
                   <FormLabel>Temperature(C)</FormLabel>
                     <NumberInput defaultValue={24.3} min={-30.0} max={300.0}>
                       <NumberInputField />
@@ -196,7 +197,7 @@ export const HealthModalPopUp = ({
                     </NumberInput>
                 </FormControl>
 
-                <FormControl mt={4}>
+                <FormControl>
                   <FormLabel>Time</FormLabel>
                   <Input
                   placeholder="Select Date and Time"
@@ -205,7 +206,7 @@ export const HealthModalPopUp = ({
                   />
                 </FormControl>
 
-                <FormControl mt={4}>
+                <FormControl>
                   <FormLabel>Weight(lbs)</FormLabel>
                     <NumberInput defaultValue={210.5} min={30.0} max={400.0}>
                       <NumberInputField />
@@ -215,6 +216,8 @@ export const HealthModalPopUp = ({
                       </NumberInputStepper>
                     </NumberInput>
                 </FormControl>
+                  </HStack>
+                <Spacer></Spacer>
 
                 <FormControl mt={4}>
                   <FormLabel>Symptoms Check</FormLabel>
