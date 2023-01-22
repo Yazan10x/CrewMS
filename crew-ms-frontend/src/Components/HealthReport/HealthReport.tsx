@@ -25,7 +25,6 @@ import {
 // import { CUIAutoComplete } from 'chakra-ui-autocomplete'
 import { FaDiscord, FaGithub } from "react-icons/all";
 import * as React from "react";
-import GridBlurredBackdrop from "../Home/Purpose";
 import {HealthModalPopUp} from "./HealthModalPopUp";
 
 
