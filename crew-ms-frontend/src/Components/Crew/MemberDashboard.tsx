@@ -53,7 +53,7 @@ export const MemberDashboard = () => {
                         <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
                             {user?.profile.first_name + " " + user?.profile.last_name}
                         </Heading>
-                        <Text color={'gray.500'}>{user?.profile.crew_position}</Text>
+                        <Text color={'gray.500'}>{user?.profile.email}</Text>
                         <Spacer></Spacer>
                     </VStack>
                     <Center>
@@ -61,10 +61,10 @@ export const MemberDashboard = () => {
                             <VStack width={"300px"} divider={<StackDivider />} spacing='6'>
                               <Box>
                                 <Heading size='m' textTransform='uppercase'>
-                                  First Name
+                                  Position
                                 </Heading>
                                 <Text pt='2' fontSize='s'>
-                                    {user?.profile.first_name}
+                                    {user?.profile.crew_position}
                                 </Text>
                               </Box>
                               <Box>
@@ -77,10 +77,10 @@ export const MemberDashboard = () => {
                               </Box>
                               <Box>
                                 <Heading size='m' textTransform='uppercase'>
-                                  Position
+                                  Blood type
                                 </Heading>
                                 <Text pt='2' fontSize='s'>
-                                    {user?.profile.crew_position}
+                                    {user?.demographics.blood_type}
                                 </Text>
                               </Box>
                             </VStack>
@@ -88,26 +88,26 @@ export const MemberDashboard = () => {
                             <VStack width={"300px"} divider={<StackDivider />} spacing='6'>
                               <Box>
                                 <Heading size='m' textTransform='uppercase'>
-                                  Last Name
+                                  Age
                                 </Heading>
                                 <Text pt='2' fontSize='s'>
-                                    {user?.profile.last_name}
+                                    {user?.demographics.age}
                                 </Text>
                               </Box>
                               <Box>
                                 <Heading size='m' textTransform='uppercase'>
-                                  Email
+                                  race
                                 </Heading>
                                 <Text pt='2' fontSize='s'>
-                                  {user?.profile.email}
+                                  {user?.demographics.race}
                                 </Text>
                               </Box>
                               <Box>
                                 <Heading size='m' textTransform='uppercase'>
-                                  Position
+                                  Sex
                                 </Heading>
                                 <Text pt='2' fontSize='s'>
-                                    {user?.profile.crew_position}
+                                    {user?.demographics.sex}
                                 </Text>
                               </Box>
                             </VStack>

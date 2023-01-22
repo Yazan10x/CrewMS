@@ -10,11 +10,11 @@ export interface Profile {
     profile_picture: string
 }
 
-export interface Profile {
+export interface Demographics {
     gender: string
     race: string
     age: string
-    sec: string
+    sex: string
     blood_type: string
     health_conditions: string
 }
@@ -24,4 +24,5 @@ export interface User {
     username: string
     has_admin: boolean
     profile: Profile
+    demographics: Demographics
 }
