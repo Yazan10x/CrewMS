@@ -7,15 +7,16 @@ import {
   Stack,
   Icon,
   useColorModeValue,
-  createIcon, Link,
-      Avatar,
+  createIcon,
+  Link,
+  Avatar,
   chakra,
   Flex,
   SimpleGrid,
-} from '@chakra-ui/react';
-import {FaDiscord, FaGithub} from "react-icons/all";
+} from "@chakra-ui/react";
+import { FaDiscord, FaGithub } from "react-icons/all";
 import * as React from "react";
-import { IncidentTable } from './IncidentTable';
+import { IncidentTable } from "./IncidentTable";
 
 export const IncidentReport = () => {
   return (
@@ -28,24 +29,40 @@ export const IncidentReport = () => {
         <title>Incident Report</title>
       </header>
 
-      <Container maxW={'3xl'}>
+      <Container maxW={"3xl"}>
         <Stack
           as={Box}
-          textAlign={'center'}
+          textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 20, md: 36 }}
+        >
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            lineHeight={"110%"}
+          >
             Incident <br />
-            <Text as={'span'} color={'green.400'}>
-              Report
+            <Text as={"span"} color={"cyan.400"}>
+              Report!
             </Text>
           </Heading>
+          <Text
+            color={"black.400"}
+            fontWeight={200}
+            fontSize={{ base: "1xl" }}
+            lineHeight={"120%"}
+            // px={{ base: 10, md: -90 }}
+          >
+            Submitting a valid and honest incident report is crucial for the
+            safety of yourself and your crew. It helps the management identify
+            any potential hazards and take action to prevent them from happening
+            again. By being honest and providing accurate information, you're
+            helping to keep everyone safe and secure. It's important to take the
+            time to submit a thorough report if an incident occurs.
+          </Text>
           <IncidentTable></IncidentTable>
         </Stack>
       </Container>
     </>
   );
-}
+};

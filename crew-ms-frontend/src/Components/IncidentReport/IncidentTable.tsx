@@ -28,7 +28,7 @@ import { DeleteIcon, ArrowForwardIcon, AddIcon } from "@chakra-ui/icons";
 import { BiExpand } from "react-icons/bi";
 import { CgExpand } from "react-icons/cg";
 import { CreateIncident, CreateIncidentDialog } from "./IncidentDialogue";
- 
+
 
 interface TableData {
     _id: ObjectID
@@ -112,14 +112,14 @@ export const IncidentTable = React.memo(() =>  {
                             </Box>
                         )
                     }
-        
+
                     },
             },
             {
                 Header: "",
                 accessor: "incident",
                 Cell: function StatusCell(incident: Incident) {
-                    
+
 
                     if (incident.status !== "Completed") {
                         return (
@@ -136,7 +136,7 @@ export const IncidentTable = React.memo(() =>  {
                             </>
                         )
                     }
-        
+
                     },
             },
             {
@@ -151,7 +151,7 @@ export const IncidentTable = React.memo(() =>  {
                             aria-label='Expand'
                             icon={<BiExpand/>}
                         />)
-        
+
                     },
             },
         ]
@@ -175,7 +175,7 @@ export const IncidentTable = React.memo(() =>  {
                                 <Skeleton height='50px' />
                             </Stack>
                     }
-                    <IconButton aria-label="Add" colorScheme={'green'} onClick={onOpen}>
+                    <IconButton aria-label="Add" colorScheme={'cyan'} onClick={onOpen}>
                         <AddIcon>
                         </AddIcon>
                     </IconButton>

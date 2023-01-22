@@ -32,7 +32,7 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderMark,
-  Tooltip,
+  Tooltip, Textarea,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -229,7 +229,7 @@ export const HealthModalPopUp = ({
 
                   <FormControl>
                     <FormLabel mt={4}>Symptoms Check</FormLabel>
-                    <Input
+                    <Textarea
                       ref={finalRef}
                       placeholder="Coughing, sore muscles and etc. Be as detailed as you can be as this is important to analyze you health."
                     />
