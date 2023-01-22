@@ -19,3 +19,4 @@ def create_incident(doc: dict) -> Response:
         return jsonify(incident_rec.oid.__str__())
     except RuntimeError:
         return jsonify('Incident Record Creation Failed!')
+

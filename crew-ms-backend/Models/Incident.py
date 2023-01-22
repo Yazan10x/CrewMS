@@ -38,18 +38,6 @@ class Incident:
         self.status = status
         self.description = description
 
-    def to_json(self) -> dict:
-        return \
-            {
-                '_id': self.oid,
-                'user_id': self.user_id,
-                'incident_type': self.incident_type,
-                'associated_users': self.associated_users,
-                'date': self.date,
-                'status': self.status,
-                'description': self.description,
-            }
-
     @staticmethod
     def from_json(doc: dict) -> Incident:
         return Incident(
@@ -61,6 +49,18 @@ class Incident:
             status=doc['status'],
             description=doc['description']
         )
+
+    def to_json(self) -> dict:
+        return \
+            {
+                '_id': self.oid,
+                'user_id': self.user_id,
+                'incident_type': self.incident_type,
+                'associated_users': self.associated_users,
+                'date': self.date,
+                'status': self.status,
+                'description': self.description,
+            }
 
     def __repr__(self) -> str:
         return f'Incident: {self.incident_type}'

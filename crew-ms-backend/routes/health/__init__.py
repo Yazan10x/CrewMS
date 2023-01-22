@@ -19,13 +19,7 @@ def get_health(user_id: str) -> Response:
 def get_all_health() -> Response:
     return post.get_health_records_by(flask.request.get_json(silent=True))
 
-#
-# @health.route("/get_simple_users", methods=['GET'])
-# def get_simple_users() -> Response:
-#     return post.get_simple_users()
-#
-#
-# @health.route("/create_user", methods=['POST'])
-# # @auth.login_required
-# def create_user() -> Response:
-#     return post.create_user(flask.request.get_json(silent=True))
+
+@health.route("/create_health_log", methods=['POST'])
+def create_health_rec() -> Response:
+    return post.create_health_log(flask.request.get_json(silent=True))
