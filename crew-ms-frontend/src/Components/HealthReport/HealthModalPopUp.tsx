@@ -161,7 +161,7 @@ export const HealthModalPopUp = ({
                   <Spacer></Spacer>
                   <HStack>
                     <FormControl>
-                      <FormLabel>BPM(beats/min)</FormLabel>
+                      <FormLabel mt={4}>BPM(beats/min)</FormLabel>
                       <NumberInput defaultValue={80} min={0} max={200}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -172,7 +172,7 @@ export const HealthModalPopUp = ({
                     </FormControl>
 
                     <FormControl>
-                      <FormLabel>Blood Pressure(mmHg)</FormLabel>
+                      <FormLabel mt={4}>Blood Pressure(mmHg)</FormLabel>
                       <NumberInput defaultValue={100} min={0} max={300}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -182,8 +182,8 @@ export const HealthModalPopUp = ({
                       </NumberInput>
                     </FormControl>
 
-                    <FormControl mt={4}>
-                      <FormLabel>Blood Oxygen(%)</FormLabel>
+                    <FormControl>
+                      <FormLabel mt={4}>Blood Oxygen(%)</FormLabel>
                       <NumberInput defaultValue={97} min={0} max={100}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -197,7 +197,7 @@ export const HealthModalPopUp = ({
                   <Spacer></Spacer>
                   <HStack>
                     <FormControl>
-                      <FormLabel>Temperature(C)</FormLabel>
+                      <FormLabel mt={4}>Temperature(C)</FormLabel>
                       <NumberInput defaultValue={24.3} min={-30.0} max={300.0}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -208,7 +208,7 @@ export const HealthModalPopUp = ({
                     </FormControl>
 
                     <FormControl>
-                      <FormLabel>Time</FormLabel>
+                      <FormLabel mt={4}>Time</FormLabel>
                       <Input
                         placeholder="Select Date and Time"
                         size="md"
@@ -217,7 +217,7 @@ export const HealthModalPopUp = ({
                     </FormControl>
 
                     <FormControl>
-                      <FormLabel>Weight(lbs)</FormLabel>
+                      <FormLabel mt={4}>Weight(lbs)</FormLabel>
                       <NumberInput defaultValue={210.5} min={30.0} max={400.0}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -227,18 +227,17 @@ export const HealthModalPopUp = ({
                       </NumberInput>
                     </FormControl>
                   </HStack>
-                  <Spacer></Spacer>
 
-                  <FormControl mt={4}>
-                    <FormLabel>Symptoms Check</FormLabel>
+                  <FormControl>
+                    <FormLabel mt={4}>Symptoms Check</FormLabel>
                     <Input
                       ref={finalRef}
                       placeholder="Coughing, sore muscles and etc. Be as detailed as you can be as this is important to analyze you health."
                     />
                   </FormControl>
 
-                  <FormControl mt={5}>
-                    <FormLabel>Hygiene Check</FormLabel>
+                  <FormControl>
+                    <FormLabel mt={4}>Hygiene Check</FormLabel>
                     <CheckboxGroup
                       colorScheme="cyan"
                       defaultValue={["handHygiene", "shower"]}
@@ -255,8 +254,8 @@ export const HealthModalPopUp = ({
                     </CheckboxGroup>
                   </FormControl>
 
-                  <FormControl mt={4}>
-                    <FormLabel>Workspace Check</FormLabel>
+                  <FormControl>
+                    <FormLabel mt={4}>Workspace Check</FormLabel>
                     <Text>Organization</Text>
                     <Stack spacing={[1, 4]} direction={["column", "row"]}>
                       <Slider
@@ -311,9 +310,10 @@ export const HealthModalPopUp = ({
                         </Tooltip>
                       </Slider>
                     </Stack>
-
-                      <Text mt = '3'>Cleanliness</Text>
-                      <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                  </FormControl>
+                  <FormControl>
+                    <Text mt="3">Cleanliness</Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
                       <Slider
                         id="slider"
                         defaultValue={5}
@@ -367,46 +367,384 @@ export const HealthModalPopUp = ({
                       </Slider>
                     </Stack>
                   </FormControl>
-
-                  <FormControl>
-                      <FormLabel>Diet(Calories)</FormLabel>
-                      <NumberInput defaultValue={10000.0} min={5000.0} max={15000.0}>
+                  <Spacer></Spacer>
+                  <HStack>
+                    <FormControl>
+                      <FormLabel mt={4}>Diet(Calories)</FormLabel>
+                      <NumberInput
+                        defaultValue={10000.0}
+                        min={5000.0}
+                        max={15000.0}
+                      >
                         <NumberInputField />
                         <NumberInputStepper>
                           <NumberIncrementStepper />
                           <NumberDecrementStepper />
                         </NumberInputStepper>
                       </NumberInput>
-                  </FormControl>
+                    </FormControl>
 
-                  <FormControl>
-                      <FormLabel>Rest(#hr of sleep)</FormLabel>
-                      <NumberInput defaultValue={10000.0} min={5000.0} max={15000.0}>
+                    <FormControl>
+                      <FormLabel mt={4}>Rest(#hr of sleep)</FormLabel>
+                      <NumberInput defaultValue={52.0} min={25.0} max={90.0}>
                         <NumberInputField />
                         <NumberInputStepper>
                           <NumberIncrementStepper />
                           <NumberDecrementStepper />
                         </NumberInputStepper>
                       </NumberInput>
-                  </FormControl>
+                    </FormControl>
+                  </HStack>
 
+                  <FormControl>
+                    <FormLabel mt={4}>Mental Health Check</FormLabel>
+                    <Text>
+                      How would you rate your overall mental well-being this
+                      week?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="teal"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+
+                    <Text mt="4">
+                      How would you rate your level of stress this week?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="orange"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+
+                    <Text mt="4">
+                      How would you rate your level of support from your
+                      colleagues and management team?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="red"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+
+                    <Text mt="4">
+                      How would you rate your level of depression this week?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="gray"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+                    <Text mt="4">
+                      How would you rate your overall level of happiness?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="yellow"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+
+                    <Text mt="4">
+                      How would you rate your level of mindfulness and presence
+                      in the moment?
+                    </Text>
+                    <Stack spacing={[1, 4]} direction={["column", "row"]}>
+                      <Slider
+                        id="slider"
+                        defaultValue={5}
+                        min={0}
+                        max={10}
+                        colorScheme="blue"
+                        onChange={(v) => setSliderValue(v)}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                      >
+                        <SliderMark value={1} mt="1" ml="-1.5" fontSize="sm">
+                          1
+                        </SliderMark>
+                        <SliderMark value={2} mt="1" ml="-1.5" fontSize="sm">
+                          2
+                        </SliderMark>
+                        <SliderMark value={3} mt="1" ml="-1.5" fontSize="sm">
+                          3
+                        </SliderMark>
+                        <SliderMark value={4} mt="1" ml="-1.5" fontSize="sm">
+                          4
+                        </SliderMark>
+                        <SliderMark value={5} mt="1" ml="-1.5" fontSize="sm">
+                          5
+                        </SliderMark>
+                        <SliderMark value={6} mt="1" ml="-1.5" fontSize="sm">
+                          6
+                        </SliderMark>
+                        <SliderMark value={7} mt="1" ml="-1.5" fontSize="sm">
+                          7
+                        </SliderMark>
+                        <SliderMark value={8} mt="1" ml="-1.5" fontSize="sm">
+                          8
+                        </SliderMark>
+                        <SliderMark value={9} mt="1" ml="-1.5" fontSize="sm">
+                          9
+                        </SliderMark>
+                        <SliderTrack>
+                          <SliderFilledTrack />
+                        </SliderTrack>
+                        <Tooltip
+                          hasArrow
+                          bg="teal.500"
+                          color="white"
+                          placement="top"
+                          isOpen={showTooltip}
+                          label={`${sliderValue}`}
+                        >
+                          <SliderThumb />
+                        </Tooltip>
+                      </Slider>
+                    </Stack>
+                  </FormControl>
                 </Stack>
               </ModalBody>
-
-              {/*    oid: ObjectId
-user_id: str
-bpm: float
-blood_pressure: float
-blood_oxygen: float
-temperature: float
-timestamp: datetime
-weight: float
-symptoms: str
-hygiene: list[str]
-workspace: dict[str, int]
-diet: float
-rest: int
-mental_health: dict[str, int]*/}
+              {/*-----------------------------------------------------------*/}
               <ModalFooter>
                 <Button colorScheme="blue" mr={3}>
                   Submit
