@@ -25,7 +25,6 @@ import {
   Input,
   useDisclosure,
 } from "@chakra-ui/react";
-// import { CUIAutoComplete } from 'chakra-ui-autocomplete'
 import { FaDiscord, FaGithub } from "react-icons/all";
 import * as React from "react";
 import { HealthModalPopUp } from "./HealthModalPopUp";
@@ -120,7 +119,6 @@ export const HealthReport = () => {
               finalRef={finalRef}
               isOpen={isOpen}
               onClose={onClose}
-              size="3xl"
             />
           </Stack>
         </Stack>

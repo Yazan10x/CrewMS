@@ -45,7 +45,6 @@ interface Props {
   finalRef: any;
   isOpen: any;
   onClose: any;
-  size: any;
 }
 
 export const HealthModalPopUp = ({
@@ -319,7 +318,7 @@ export const HealthModalPopUp = ({
                         defaultValue={5}
                         min={0}
                         max={10}
-                        colorScheme="teal"
+                        colorScheme="blue"
                         onChange={(v) => setSliderValue(v)}
                         onMouseEnter={() => setShowTooltip(true)}
                         onMouseLeave={() => setShowTooltip(false)}
@@ -356,7 +355,7 @@ export const HealthModalPopUp = ({
                         </SliderTrack>
                         <Tooltip
                           hasArrow
-                          bg="teal.500"
+                          bg="blue.500"
                           color="white"
                           placement="top"
                           isOpen={showTooltip}
@@ -408,7 +407,7 @@ export const HealthModalPopUp = ({
                         defaultValue={5}
                         min={0}
                         max={10}
-                        colorScheme="teal"
+                        colorScheme="green"
                         onChange={(v) => setSliderValue(v)}
                         onMouseEnter={() => setShowTooltip(true)}
                         onMouseLeave={() => setShowTooltip(false)}
@@ -445,7 +444,7 @@ export const HealthModalPopUp = ({
                         </SliderTrack>
                         <Tooltip
                           hasArrow
-                          bg="teal.500"
+                          bg="green.500"
                           color="white"
                           placement="top"
                           isOpen={showTooltip}
