@@ -20,11 +20,11 @@ ChartJS.register(
 );
 
 export const data = {
-  labels: ['Hours of Sleep', 'Number of Meals', 'Hours of Exercise', 'Workplace Organization', '', 'Thing 6'],
+  labels: ['Hours of Sleep', 'Number of Meals', 'Hours of Exercise', 'Workplace Organization', 'Mental Health'],
   datasets: [
     {
       label: 'Average statistics of the crew',
-      data: [2, 9, 3, 5, 2, 3],
+      data: [42, 21, 14, 4, 3],
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(255, 99, 132, 1)',
       borderWidth: 1,

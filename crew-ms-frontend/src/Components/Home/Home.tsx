@@ -38,7 +38,7 @@ export const Home = () => {
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
-            Join Our Crewsade <br />
+            Join Our Crewsise <br />
             <Text as={'span'} color={'cyan.400'}>
               Let's explore together!
             </Text>
@@ -52,7 +52,7 @@ export const Home = () => {
             <Text>
               We believe that everyone should be able to explore the world around them as
               it is an opportunity to learn. But unfortunately, exploration can affect us in
-              other ways. Hence we made Crewsade, which is an application that will always be by
+              other ways. Hence we made Crewise, which is an application that will always be by
               your side. We allow crew members to file reports if the need ever occurs and we check in
               on you and your crew everyday to make sure everyone is doing all right.
             </Text>

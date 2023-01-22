@@ -21,7 +21,7 @@ export const PieCard = () => {
                 overflow='hidden'
                 variant='outline'
                 align='center'
-                minW={'3000px'}
+                minW={'1400px'}
             >
             <Stack>
                 <CardBody>
