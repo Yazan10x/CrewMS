@@ -38,7 +38,7 @@ export const Home = () => {
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
-            Join Our Crewsise <br />
+            Join Our Crewise <br />
             <Text as={'span'} color={'cyan.400'}>
               Let's explore together!
             </Text>

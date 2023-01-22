@@ -19,7 +19,6 @@ def get_incidents() -> Response:
     return get.get_incidents(flask.request.get_json(silent=True))
 
 
-# @incidents.route("/create_user", methods=['POST'])
-# # @auth.login_required
-# def create_user() -> Response:
-#     return post.create_user(flask.request.get_json(silent=True))
+@incidents.route("/create_incident", methods=['POST'])
+def create_incident() -> Response:
+    return post.create_incident(flask.request.get_json(silent=True))
