@@ -67,6 +67,13 @@ export const IncidentTable = React.memo(() =>  {
         display_incidents()
     }, []);
 
+    const delete_incident = (_id: ObjectID) => {
+        IncidentsAPI.delete_incident(_id)
+            .then(() => {
+                display_incidents()
+            })
+    }
+
     const get_columns = () => {
 
         return [
@@ -121,6 +128,7 @@ export const IncidentTable = React.memo(() =>  {
                             size='sm'
                             aria-label='Search database'
                             icon={<DeleteIcon/>}
+                            onClick={() => delete_incident(incident._id)}
                         />)
                     } else {
                         return (
