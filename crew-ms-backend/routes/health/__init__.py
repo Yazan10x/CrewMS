@@ -6,7 +6,7 @@ from bson import ObjectId
 # USEC Imports
 from routes.health import get, post, delete
 
-health = Blueprint('health', __name__)
+health = Blueprint('health_record', __name__)
 
 
 @health.route("/get_health/<health_id>", methods=['GET'])
@@ -14,8 +14,8 @@ def get_health(user_id: str) -> Response:
     return get.get_health(ObjectId(user_id))
 
 
-@health.route("/delete_health/<health_id>", methods=['Delete'])
-def get_health(user_id: str) -> Response:
+@health.route("/delete_health/<health_id>", methods=['DELETE'])
+def delete_health(user_id: str) -> Response:
     return delete.delete_health(ObjectId(user_id))
 
 

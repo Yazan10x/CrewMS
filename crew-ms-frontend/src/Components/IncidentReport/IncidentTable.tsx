@@ -28,7 +28,7 @@ import { DeleteIcon, ArrowForwardIcon, AddIcon } from "@chakra-ui/icons";
 import { BiExpand } from "react-icons/bi";
 import { CgExpand } from "react-icons/cg";
 import { CreateIncident, CreateIncidentDialog } from "./IncidentDialogue";
- 
+
 
 interface TableData {
     _id: ObjectID
@@ -66,13 +66,6 @@ export const IncidentTable = React.memo(() =>  {
     useEffect(() => {
         display_incidents()
     }, []);
-
-    const delete_incident = (_id: ObjectID) => {
-        IncidentsAPI.delete_incident(_id)
-            .then(() => {
-                display_incidents()
-            })
-    }
 
     const get_columns = () => {
 
@@ -112,14 +105,21 @@ export const IncidentTable = React.memo(() =>  {
                             </Box>
                         )
                     }
-        
+
                     },
             },
             {
                 Header: "",
                 accessor: "incident",
                 Cell: function StatusCell(incident: Incident) {
-                    
+
+                    const delete_action = () => {
+                        IncidentsAPI.delete_incident(incident._id)
+                            .then((res) => {
+                                console.log(res)
+                            })
+                        window.location.reload()
+                    }
 
                     if (incident.status !== "Completed") {
                         return (
@@ -128,7 +128,7 @@ export const IncidentTable = React.memo(() =>  {
                             size='sm'
                             aria-label='Search database'
                             icon={<DeleteIcon/>}
-                            onClick={() => delete_incident(incident._id)}
+                            onClick={delete_action}
                         />)
                     } else {
                         return (
@@ -136,7 +136,7 @@ export const IncidentTable = React.memo(() =>  {
                             </>
                         )
                     }
-        
+
                     },
             },
             {
@@ -151,7 +151,7 @@ export const IncidentTable = React.memo(() =>  {
                             aria-label='Expand'
                             icon={<BiExpand/>}
                         />)
-        
+
                     },
             },
         ]

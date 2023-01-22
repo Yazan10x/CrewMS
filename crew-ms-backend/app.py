@@ -4,14 +4,14 @@ from flask_cors import CORS
 
 # Imports
 from routes.users import users
-from routes.incident.__init__ import incidents
+from routes.incident import incidents
 from routes.health import health
 
 app = Flask(__name__)
 
 # Services
 app.register_blueprint(users, url_prefix="/users")
-app.register_blueprint(health, url_prefix="/health")
+app.register_blueprint(health, url_prefix="/health_record")
 app.register_blueprint(incidents, url_prefix="/incidents")
 CORS(app)
 
